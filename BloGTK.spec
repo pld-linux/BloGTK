@@ -1,5 +1,5 @@
-Summary:	BloGTK is a weblog client
-Summary(pl):	BloGTK jest klientem dla weblogów
+Summary:	BloGTK - a weblog client
+Summary(pl):	BloGTK - klient dla weblogów
 Name:		BloGTK
 Version:	1.1
 Release:	1
@@ -9,8 +9,7 @@ Source0:	http://dl.sourceforge.net/blogtk/blogtk_%{version}.tar.bz2
 # Source0-md5:	cd2d2521a261867cd9c830a81d3d4408
 URL:		http://blogtk.sourceforge.net/
 BuildRequires:	python
-BuildRequires:	python-pygtk-gtk
-BuildRequires:	gtk+2
+BuildRequires:	python-pygtk-gtk >= 2.0
 BuildRequires:	python-pygtk-glade
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -22,7 +21,7 @@ WordPress, and more. BloGTK Main WindowBloGTK is written using Python
 and PyGTK, and is designed to be fast and simple to use.
 
 %description -l pl
-BloGTK jest klientem dla weblogów, który pozwala ci umieszczaæ notki
+BloGTK jest klientem dla weblogów, który pozwala umieszczaæ notatki
 na blogach bez konieczno¶ci korzystania z przegl±darki internetowej.
 BloGTK pozwala na korzystanie z wielu systemu weblogów, takich jak:
 Blogger, Moveable Type, WordPress i innych. BloGTK jest napisany z
