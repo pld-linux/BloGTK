@@ -34,11 +34,12 @@ u¿yciem Pythona i PyGTK i ma byæ szybkim i prostym w u¿yciu.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-        BINDIR=$RPM_BUILD_ROOT%{_bindir} \
-        DATADIR=$RPM_BUILD_ROOT/share/blogtk \
+	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
+	DATADIR=$RPM_BUILD_ROOT/share/blogtk \
 	LIBDIR=$RPM_BUILD_ROOT/lib/blogtk \
-        APPLICATIONSDIR=$RPM_BUILD_ROOT/share/applications \
+	APPLICATIONSDIR=$RPM_BUILD_ROOT/share/applications \
 	ICONDIR=$RPM_BUILD_ROOT/share/pixmaps
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
