@@ -4,7 +4,7 @@ Name:		BloGTK
 Version:	1.1
 Release:	1
 License:	GPL v2
-Group:		Development
+Group:		Applications/Communications
 Source0:	http://dl.sourceforge.net/blogtk/blogtk_%{version}.tar.bz2
 # Source0-md5:	cd2d2521a261867cd9c830a81d3d4408
 URL:		http://blogtk.sourceforge.net/
