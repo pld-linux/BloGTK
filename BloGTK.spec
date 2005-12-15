@@ -9,8 +9,8 @@ Source0:	http://dl.sourceforge.net/blogtk/blogtk_%{version}.tar.bz2
 # Source0-md5:	cd2d2521a261867cd9c830a81d3d4408
 URL:		http://blogtk.sourceforge.net/
 BuildRequires:	python
-BuildRequires:	python-pygtk-gtk >= 2.0
 BuildRequires:	python-pygtk-glade
+BuildRequires:	python-pygtk-gtk >= 2.0
 Requires:	python-gnome-extras-gtkhtml
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -29,7 +29,7 @@ Blogger, Moveable Type, WordPress i innych. BloGTK jest napisany z
 u¿yciem Pythona i PyGTK i ma byæ szybkim i prostym w u¿yciu.
 
 %prep
-%setup -q -n BloGTK-1.1
+%setup -q
 
 %install
 rm -rf $RPM_BUILD_ROOT
