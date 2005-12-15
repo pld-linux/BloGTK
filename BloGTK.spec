@@ -11,6 +11,7 @@ URL:		http://blogtk.sourceforge.net/
 BuildRequires:	python
 BuildRequires:	python-pygtk-gtk >= 2.0
 BuildRequires:	python-pygtk-glade
+Requires:	python-gnome-extras-gtkhtml
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -33,15 +34,17 @@ u¿yciem Pythona i PyGTK i ma byæ szybkim i prostym w u¿yciu.
 %install
 rm -rf $RPM_BUILD_ROOT
 
+sed -i 's/if test -f.*fi//' Makefile
+
 %{__make} install \
 	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
-	DATADIR=$RPM_BUILD_ROOT%{_datadir}/%{name} \
-	LIBDIR=$RPM_BUILD_ROOT%{_libdir}/%{name} \
+	DATADIR=$RPM_BUILD_ROOT%{_datadir}/blogtk \
+	LIBDIR=$RPM_BUILD_ROOT%{_libdir}/blogtk \
 	APPLICATIONSDIR=$RPM_BUILD_ROOT%{_desktopdir} \
 	ICONDIR=$RPM_BUILD_ROOT%{_iconsdir}
 
 rm $RPM_BUILD_ROOT%{_bindir}/BloGTK
-ln -s {%_libdir}/blogtk/BloGTK.py $RPM_BUILD_ROOT%{_bindir}/BloGTK
+ln -s %{_libdir}/blogtk/BloGTK.py $RPM_BUILD_ROOT%{_bindir}/BloGTK
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -52,5 +55,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_desktopdir}/*
 %attr(644,root,root) %{_iconsdir}/*
-%{_datadir}/%{name}
-%{_libdir}/%{name}
+%attr(755,root,root) %{_libdir}/blogtk/BloGTK.py
+%{_datadir}/blogtk
+%{_libdir}/blogtk
