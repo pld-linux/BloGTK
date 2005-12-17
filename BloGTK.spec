@@ -41,10 +41,11 @@ sed -i 's/if test -f.*fi//' Makefile
 	DATADIR=$RPM_BUILD_ROOT%{_datadir}/blogtk \
 	LIBDIR=$RPM_BUILD_ROOT%{_libdir}/blogtk \
 	APPLICATIONSDIR=$RPM_BUILD_ROOT%{_desktopdir} \
-	ICONDIR=$RPM_BUILD_ROOT%{_iconsdir}
+	ICONDIR=$RPM_BUILD_ROOT%{_pixmapsdir}
 
 rm $RPM_BUILD_ROOT%{_bindir}/BloGTK
 ln -s %{_libdir}/blogtk/BloGTK.py $RPM_BUILD_ROOT%{_bindir}/BloGTK
+rm -f $RPM_BUILD_ROOT%{_datadir}/blogtk/*.bak
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -53,8 +54,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
 %attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_desktopdir}/*
-%attr(644,root,root) %{_iconsdir}/*
+%{_desktopdir}/*.desktop
+%{_pixmapsdir}/*.png
+%dir %{_libdir}/blogtk
 %attr(755,root,root) %{_libdir}/blogtk/BloGTK.py
+%{_libdir}/blogtk/[cps]*.py
 %{_datadir}/blogtk
-%{_libdir}/blogtk
