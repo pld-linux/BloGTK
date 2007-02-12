@@ -1,5 +1,5 @@
 Summary:	BloGTK - a weblog client
-Summary(pl.UTF-8):   BloGTK - klient dla weblogów
+Summary(pl.UTF-8):	BloGTK - klient dla weblogów
 Name:		BloGTK
 Version:	1.1
 Release:	1
